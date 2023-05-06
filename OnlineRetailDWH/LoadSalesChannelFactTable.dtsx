@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Package1"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{3EA509CF-62BC-421C-8046-EA43946B69BF}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{C9047FF4-5E2C-4F2B-934F-08FC0E34A526}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1140,63 +1140,29 @@ where [refTable].[ChannelID] = ?</property>
           Id="Package\Data Flow Task\Get DateKey"
           TopLeft="182,354" />
         <NodeLayout
-          Size="156,42"
-          Id="Package\Data Flow Task\Get Today Date"
-          TopLeft="177,268" />
-        <NodeLayout
-          Size="203,42"
-          Id="Package\Data Flow Task\SalesChannel Dimension"
-          TopLeft="168,0" />
+          Size="208,42"
+          Id="Package\Data Flow Task\Get Invoices Total Amount"
+          TopLeft="175,87" />
         <NodeLayout
           Size="163,42"
           Id="Package\Data Flow Task\Get Channel Key"
           TopLeft="182,457" />
         <NodeLayout
-          Size="208,42"
-          Id="Package\Data Flow Task\Get Invoices Total Amount"
-          TopLeft="175,87" />
-        <NodeLayout
           Size="202,42"
           Id="Package\Data Flow Task\SalesChannel Fact Table"
           TopLeft="163,551" />
         <NodeLayout
+          Size="156,42"
+          Id="Package\Data Flow Task\Get Today Date"
+          TopLeft="177,268" />
+        <NodeLayout
           Size="244,42"
           Id="Package\Data Flow Task\Calculate Revenue From Invoices"
           TopLeft="148,178" />
-        <EdgeLayout
-          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
-          TopLeft="269.5,42">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="9.5,45"
-              Start="0,0"
-              End="9.5,37.5">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,18.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,18.5"
-                    Point2="0,22.5"
-                    Point3="4,22.5" />
-                  <mssgle:LineSegment
-                    End="5.5,22.5" />
-                  <mssgle:CubicBezierSegment
-                    Point1="5.5,22.5"
-                    Point2="9.5,22.5"
-                    Point3="9.5,26.5" />
-                  <mssgle:LineSegment
-                    End="9.5,37.5" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
+        <NodeLayout
+          Size="203,42"
+          Id="Package\Data Flow Task\SalesChannel Dimension"
+          TopLeft="168,0" />
         <EdgeLayout
           Id="Package\Data Flow Task.Paths[Lookup Match Output2]"
           TopLeft="263.75,499">
@@ -1349,6 +1315,40 @@ where [refTable].[ChannelID] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Data Flow Task.Paths[OLE DB Source Output]"
+          TopLeft="269.5,42">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="9.5,45"
+              Start="0,0"
+              End="9.5,37.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,18.5"
+                    Point2="0,22.5"
+                    Point3="4,22.5" />
+                  <mssgle:LineSegment
+                    End="5.5,22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="5.5,22.5"
+                    Point2="9.5,22.5"
+                    Point3="9.5,26.5" />
+                  <mssgle:LineSegment
+                    End="9.5,37.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
@@ -1358,48 +1358,12 @@ where [refTable].[ChannelID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Date]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\SalesChannel Dimension">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Data Flow Task\Get Channel Key">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
           type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string">[dbo].[SalesChannelDimension]</Value>
+          type="q3:string">[dbo].[Dim_Date]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
@@ -1435,7 +1399,43 @@ where [refTable].[ChannelID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\Get Channel Key">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[SalesChannelDimension]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Data Flow Task\SalesChannel Fact Table">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Data Flow Task\SalesChannel Dimension">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
